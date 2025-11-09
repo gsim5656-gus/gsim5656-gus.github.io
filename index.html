@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Labyrinthe Organic - Règles du Jeu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>🌌 Le Labyrinthe Organic</h1>
+        <p class="subtitle">Un monde en perpétuel changement...</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Bienvenue dans le Labyrinthe Organic, un monde en perpétuel changement. Chaque partie débute dans une simple pièce... et à mesure que vous avancez, le monde s'étend, se déforme, et s'effondre.</p>
+            <p>Le Labyrinthe est le cœur de toutes les aventures : peu importe le mode de jeu que vous allez choisir, ce sont ses règles simples qui façonnent la carte, les déplacements, et les combats.</p>
+        </section>
+
+        <section class="rules-section">
+            <h2>🔮 Les types de cartes Map</h2>
+            <div class="card-types">
+                <div class="card-type">
+                    <div class="card-icon yellow">🟨</div>
+                    <h3>Carte de départ</h3>
+                    <p>Là où les joueurs commencent, cette carte ne peut être détruite.</p>
+                </div>
+                <div class="card-type">
+                    <div class="card-icon white">⬜</div>
+                    <h3>Neutres</h3>
+                    <p>Pièces sans effet, servant à construire le Labyrinthe.</p>
+                </div>
+                <div class="card-type">
+                    <div class="card-icon portal">🌀</div>
+                    <h3>Portails</h3>
+                    <p>Permettent de se téléporter à n'importe quel autre portail visible sur la carte.</p>
+                </div>
+            </div>
+            <p class="note">Certaines cartes ont des passages bloqués (murs, impasses, culs-de-sac).<br>
+            → On ne peut relier deux cartes que si leurs passages coïncident visuellement.</p>
+        </section>
+
+        <section class="rules-section">
+            <h2>🧭 Déroulement d'un tour</h2>
+            <p>Le jeu se joue en tours individuels, dans le sens des aiguilles d'une montre. Chaque joueur dispose de <strong>3 Points d'Action (PA)</strong> par tour.</p>
+
+            <div class="action-grid">
+                <div class="action-card">
+                    <h3>Explorer (1 PA)</h3>
+                    <p>Se déplacer sur une nouvelle carte, révélée ou non. Si la carte est nouvelle, piochez la première du deck et connectez-la selon les ouvertures visibles.</p>
+                </div>
+                <div class="action-card">
+                    <h3>Sprinter (1 PA, 1 fois par tour)</h3>
+                    <p>Lancez un dé à 6 faces et déplacez-vous du nombre de cartes indiqué, mais uniquement sur des cartes déjà révélées.</p>
+                </div>
+                <div class="action-card">
+                    <h3>Combattre (0 PA, 1 fois par tour)</h3>
+                    <p>Si un autre joueur est sur la même carte, vous pouvez déclencher un combat. Chacun lance un D6 → le plus bas perd et retourne au Hall Central.</p>
+                    <p class="small">PS : si un joueur passe sur votre case pendant son tour, vous pouvez déclencher un combat.</p>
+                </div>
+                <div class="action-card">
+                    <h3>Activer un effet de Map (0 PA)</h3>
+                    <p>Utilisez immédiatement l'effet d'une carte spéciale sur laquelle vous vous trouvez.</p>
+                    <p class="small">(Possible de terminer un sprint après avoir activé un effet)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rules-section">
+            <h2>🌪️ Le Séisme</h2>
+            <p>À la fin du tour d'un joueur, il peut déclencher un séisme :</p>
+            <ul>
+                <li>Il choisit une carte Map (ni la carte de départ ni une carte où se trouve un joueur) et la retire du plateau.</li>
+                <li>La carte retirée va en dessous de la pioche.</li>
+            </ul>
+        </section>
+
+        <section class="rules-section">
+            <h2>🚪 Les cartes Raccord</h2>
+            <p>Le Labyrinthe peut rapidement déborder de la table... et c'est tout à fait normal.</p>
+            <ul>
+                <li>Lorsqu'un joueur souhaite continuer dans une direction qui sortirait du plateau, il peut placer une carte Raccord.</li>
+                <li>Chaque carte Raccord représente une porte numérotée comme sa jumelle (ex. Porte 1, Porte 2...).</li>
+                <li>On place la première porte à l'endroit où l'on quitte la table.</li>
+                <li>On place ensuite la porte jumelle du même numéro ailleurs dans la pièce (sur une autre table, une chaise, ou même un meuble).</li>
+                <li>Ces portes sont indestructibles.</li>
+            </ul>
+        </section>
+
+        <section class="items-section">
+            <h2>🎒 Liste des Items</h2>
+
+            <div class="item-category red">
+                <h3>💥 Items de combat (rouge)</h3>
+                <div class="items-grid">
+                    <div class="item-card">
+                        <h4>Gourdin</h4>
+                        <p><strong>Passif</strong>: Lance deux dés en combat, garde le meilleur résultat.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Grenade</h4>
+                        <p><strong>1PA 1xtour</strong>: Sélectionne une case en ligne droite et lance un dé d'attaque. L'attaque touche la case sélectionnée + toutes les cases reliées à 2 de distance.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Lance flamme</h4>
+                        <p><strong>1PA 1xtour</strong>: Attaque autant de joueurs possible en ligne droite. L'attaquant lance un dé et chaque défenseur lance chacun un dé pour se défendre.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Pistolet</h4>
+                        <p><strong>1PA 1xtour</strong>: Peut attaquer un joueur situé sur la même ligne (sans mur).</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Vengeance !</h4>
+                        <p><strong>Passif</strong>: Si tu perds un combat, lance un dé : sur 5 ou 6, vous perdez tous les deux.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Furie</h4>
+                        <p><strong>Passif</strong>: Après avoir gagné un combat, rejoue immédiatement un tour avec 3 PA.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Chaussures qui court vite</h4>
+                        <p><strong>Passif</strong>: Quand un joueur t'attaque, tu peux lancer un d6, sur 4+ le combat est annulé.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Chaussures qui court loin</h4>
+                        <p><strong>Passif</strong>: Quand un joueur t'attaque, tu peux lancer un d6, sur 4+ le combat est annulé et l'attaquant et toi vous déplacez sur n'importe quel portail.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Chacal</h4>
+                        <p><strong>1PA</strong>: Pose 3 jetons faces cachés n'importe où sur la map, l'un des 3 est un piège et tue la personne qui marche dessus.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Poing américain</h4>
+                        <p><strong>Passif</strong>: +1 au résultat du dé pendant un combat.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Bouclier</h4>
+                        <p><strong>Passif</strong>: Lance 3 dés pendant un combat, uniquement pour se défendre.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Mercy</h4>
+                        <p><strong>0PA 3xpartie</strong>: Si un autre joueur perd un combat à moins de 3 cases de vous, vous pouvez annuler ce combat.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Couteau de l'Ombre</h4>
+                        <p><strong>Passif</strong>: Tu peux attaquer un joueur ou un monstre sur une carte adjacente et à travers un mur.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Hache du Tyran</h4>
+                        <p><strong>Passif</strong>: Quand tu tues un joueur, lance un d6, sur 4+, pioche un item.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Bâton de Brume</h4>
+                        <p><strong>Passif</strong>: Si tu gagnes un combat, tu peux immédiatement te téléporter vers un portail visible.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Botte du Chasseur</h4>
+                        <p><strong>Passif</strong>: Lance deux dés en combat contre les monstres.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Sacrieur</h4>
+                        <p><strong>0PA 1xtour</strong>: Attire un joueur en ligne droite, si vous déclenchez un combat dans le même tour +1 au résultat du dé.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Cocotte minute</h4>
+                        <p><strong>Passif</strong>: À la fin de votre tour, si vous n'avez pas déclenché de combat, ajoutez un compteur. Lors d'un combat, payez un compteur pour ajouter un dé.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Lame maudite</h4>
+                        <p><strong>Passif</strong>: +1 au dé pendant un combat. Augmente de +1 pour chaque objet maudit possédé.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Lutte illitée</h4>
+                        <p><strong>Passif</strong>: Ajoute un dé de combat pour chaque item que vous possédez.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-category blue">
+                <h3>🧭 Items de déplacement (bleu)</h3>
+                <div class="items-grid">
+                    <div class="item-card">
+                        <h4>Voudoo</h4>
+                        <p><strong>1PA</strong>: Déplace de 3 cases révélées un personnage.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Pas Fantôme</h4>
+                        <p><strong>1PA 1xtour</strong>: Déplace-toi à travers un mur.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Sprint Amélioré</h4>
+                        <p><strong>Passif</strong>: Lorsque tu fais un sprint, lance deux dés et garde le meilleur.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Portail de Poche</h4>
+                        <p><strong>1PA</strong>: Téléporte-toi instantanément à n'importe quel portail visible sur la carte.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Porteur de Chemins</h4>
+                        <p><strong>1PA</strong>: Pose une carte Map n'importe où.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Briseur de Sol</h4>
+                        <p><strong>1PA</strong>: Retire une case du plateau.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Rappel Rapide</h4>
+                        <p><strong>1PA</strong>: Déplace-toi vers la carte de départ.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Échange de Place</h4>
+                        <p><strong>1PA</strong>: Choisis un joueur et échange ta position avec lui.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Bolt</h4>
+                        <p><strong>Passif</strong>: Explorer permet de se déplacer ou découvrir 2 cases.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Grapin</h4>
+                        <p><strong>1PA</strong>: Parcours autant de cases possible tant que c'est en ligne droite (révélée ou non).</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Panda</h4>
+                        <p><strong>1PA</strong>: Porter et jeter un personnage sur autant de cases qu'on veut tant que c'est en ligne droite et sur des cases révélées.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Sadida</h4>
+                        <p><strong>0PA 2xtour</strong>: Retourne une case map. La case ne peut plus être traversée ni détruite.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Tracer</h4>
+                        <p><strong>0PA 1xtour</strong>: À la fin de son tour, le joueur peut choisir de revenir sur la case où il a commencé son tour.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Marque du Voyageur</h4>
+                        <p><strong>0PA</strong>: Pose un "artefact" sur ta case : tu peux t'y téléporter plus tard pour 1 PA. La case devient indestructible.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Parachute</h4>
+                        <p><strong>Passif</strong>: Quand vous passez à travers un portail, vous choisissez n'importe quelle case pour atterrir.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Bon réflexe</h4>
+                        <p><strong>0PA 1xtour</strong>: À la fin de votre tour, vous avez un sprint gratuit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-category purple">
+                <h3>🔮 Items spéciaux (violet)</h3>
+                <div class="items-grid">
+                    <div class="item-card">
+                        <h4>Eliotrope</h4>
+                        <p><strong>1PA</strong>: Déplace un portail où tu veux.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Sablier</h4>
+                        <p><strong>Passif</strong>: 1 PA de plus par tour.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Xelor</h4>
+                        <p><strong>0PA 1xtour</strong>: Vole 1 PA à un joueur.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Cadran du temps</h4>
+                        <p><strong>0PA</strong>: Glissez cet item en bas de la pioche, piochez un item et rejouez un tour complet.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Miroir de Brume</h4>
+                        <p><strong>2PA</strong>: Utilise gratuitement l'effet de l'item d'un joueur.</p>
+                    </div>
+                    <div class="item-card">
+                        <h4>Cain</h4>
+                        <p><strong>0PA 1xtour</strong>: Regarde les 3 prochaines cartes d'une pioche.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Le Labyrinthe Organic - Un jeu de [Nom de votre pote]</p>
+    </footer>
+</body>
+</html>
