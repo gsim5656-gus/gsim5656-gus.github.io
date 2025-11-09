@@ -392,6 +392,83 @@
         <p><strong>Coût :</strong> 1 PA, 1x/tour</p>
     </div>
 </div>
+<script>
+    // Fonction pour ouvrir une modale
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        document.body.style.overflow = "hidden"; // Empêche le scroll en arrière-plan
+    }
+
+    // Fonction pour fermer une modale
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    // Fermer la modale en cliquant sur la croix
+    document.querySelectorAll('.close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function() {
+            this.parentElement.parentElement.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    });
+
+    // Fermer la modale en cliquant en dehors
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // Ajouter des événements de clic aux cartes
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cartes Map
+        document.querySelectorAll('.card-type').forEach((card, index) => {
+            card.addEventListener('click', function() {
+                if (index === 0) openModal('modal-map-start');
+                else if (index === 1) openModal('modal-map-neutral');
+                else if (index === 2) openModal('modal-map-portal');
+            });
+        });
+
+        // Items (exemples pour Sacrieur et Pas Fantôme)
+        const sacrieurCard = document.querySelector('.item-card h4:contains("Sacrieur")').closest('.item-card');
+        if (sacrieurCard) {
+            sacrieurCard.addEventListener('click', function() {
+                openModal('modal-item-sacrieur');
+            });
+        }
+
+        const pasFantomeCard = document.querySelector('.item-card h4:contains("Pas Fantôme")').closest('.item-card');
+        if (pasFantomeCard) {
+            pasFantomeCard.addEventListener('click', function() {
+                openModal('modal-item-pas-fantome');
+            });
+        }
+    });
+
+    // Helper pour sélectionner des éléments par texte (pour les items)
+    if (!document.querySelectorAll(':contains')) {
+        document.querySelectorAll = (function(original) {
+            return function(selector) {
+                if (selector.startsWith(':contains(')) {
+                    const text = selector.replace(':contains(', '').replace(')', '').replace(/"/g, '');
+                    const elements = [];
+                    const allElements = document.getElementsByTagName('*');
+                    for (let i = 0; i < allElements.length; i++) {
+                        if (allElements[i].textContent.includes(text)) {
+                            elements.push(allElements[i]);
+                        }
+                    }
+                    return elements;
+                } else {
+                    return original.apply(this, arguments);
+                }
+            };
+        })(document.querySelectorAll);
+    }
+</script>
 
 </body>
 </html>
