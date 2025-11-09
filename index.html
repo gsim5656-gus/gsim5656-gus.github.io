@@ -23,11 +23,15 @@
         <section class="rules-section">
             <h2>🔮 Les types de cartes Map</h2>
             <div class="card-types">
-                <div class="card-type">
-                    <div class="card-icon yellow">🟨</div>
-                    <h3>Carte de départ</h3>
-                    <p>Là où les joueurs commencent, cette carte ne peut être détruite.</p>
+                <div class="card-types">
+                    <div class="card-type" style="cursor: pointer;"> <!-- Ajoutez style="cursor: pointer;" -->
+                        <div class="card-icon yellow">🟨</div>
+                        <h3>Carte de départ</h3>
+                        <p>Là où les joueurs commence, cette carte ne peut être détruite.</p>
+                    </div>
+                    <!-- Répétez pour les autres cartes -->
                 </div>
+
                 <div class="card-type">
                     <div class="card-icon white">⬜</div>
                     <h3>Neutres</h3>
@@ -96,7 +100,7 @@
             <div class="item-category red">
                 <h3>💥 Items de combat (rouge)</h3>
                 <div class="items-grid">
-                    <div class="item-card">
+                    <div class="item-card" style="cursor: pointer;">
                         <h4>Gourdin</h4>
                         <p><strong>Passif</strong>: Lance deux dés en combat, garde le meilleur résultat.</p>
                     </div>
